@@ -1,0 +1,222 @@
+* {
+  font-family: Helvetica;
+}
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+.App {
+  text-align: center;
+}
+
+.App-header {
+  display: flex;
+  background-color: #000;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.gif-container{
+  display: flex;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #fff;
+  overflow: hidden;
+}
+.links{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 15rem;
+  align-items: center;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 0 0 100px #0008;
+}
+
+.home-link{
+  font-family: Helvetica;
+  text-decoration: none;
+  color: #fff;
+  grid-column: 1 / 2;
+  font-size: 3em;
+  margin: 1em;
+}
+
+.gif-list{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+.gif-list > li{
+  display: flex;
+}
+.searcher{
+  box-sizing: border-box;
+  border: 2px solid #fff;
+  border-radius: 3em 0 0 3em;
+  width: 100%;
+  max-width: 30rem;
+  height: 3rem;
+  background-color: #000000;
+  color: #fff;
+  font-size: 2rem;
+  padding: 0.5rem;
+}
+.searcher:focus{
+  outline: none;
+}
+.searcher::placeholder{
+  color: #aaa;
+}
+.grid-content{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 15rem;
+  justify-content: center;
+  grid-gap: 10px;
+  padding: 0 3em;
+  min-height: 100vh;
+}
+.gif-content{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  transform: translateY(100%);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  height: 200%;
+  background-color: #282c34aa;
+  backdrop-filter: blur(8px);
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  color: #fff;
+}
+.gif-container:hover > .gif-content{
+  transform: translateY(-23%);
+}
+.gif-content h4{
+  font-size: 1rem;
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 2em;
+  color: #fff;
+  padding: .5em;
+  margin: 0 1em;
+  transition: background-color 0.2s ;
+}
+.gif-content h4:hover{
+  background-color: #fff;
+  color: #000;
+}
+.gif-content small{
+  font-size: .8rem;
+  padding: 0;
+  margin: 0;
+}
+.searcher-box{
+  grid-column: 1 / 2;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+  padding: 10px;
+}
+.material-symbols-outlined{
+  box-sizing: border-box;
+  padding: .22rem;
+  font-size: 2.3rem;
+  border: 2px solid #fff;
+  background-color: #fff;
+  color: #000;
+  border-radius: 0 3em 3em 0;
+}
+.load-more-button{
+  grid-column: 1 / 2;
+  display: flex;
+  justify-content: center;
+  padding: 3em;
+}
+@media screen and (min-width: 300px){
+  .grid-content{
+    padding: 0;
+  }
+
+}
+@media screen and (min-width: 600px){
+  .grid-content{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .searcher-box{
+    grid-column: 1 / 3;
+  }
+  .home-link{
+    grid-column: 1 / 3;
+  }
+  .load-more-button{
+    grid-column: 1 / 3;
+  }
+}
+@media screen and (min-width: 900px){
+  .grid-content{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .searcher-box{
+    grid-column: 1 / 4;
+  }
+  .home-link{
+    grid-column: 1 / 4;
+  }
+  .load-more-button{
+    grid-column: 1 / 4;
+  }
+}
+@media screen and (min-width: 1200px){
+  .grid-content{
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 2.5em;
+  }
+  .searcher-box{
+    grid-column: 1 / 5;
+  }
+  .home-link{
+    grid-column: 1 / 5;
+  }
+  .load-more-button{
+    grid-column: 1 / 5;
+  }
+}
+@media screen and (min-width: 1500px){
+  .grid-content{
+    grid-template-columns: repeat(5, 1fr);
+    padding: 0 3em;
+  }
+  .searcher-box{
+    grid-column: 1 / 6;
+  }
+  .home-link{
+    grid-column: 1 / 6;
+  }
+  .load-more-button{
+    grid-column: 1 / 6;
+  }
+}
