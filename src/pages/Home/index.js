@@ -11,11 +11,11 @@ import { Helmet } from 'react-helmet';
 function Home() {
     const { gifs, loading} = ReturnGif(localStorage.getItem('lastSearch'));
     return(
-      <div className="App">
+      <>
         <Helmet>
           <title>Gifly</title>
         </Helmet>
-        <div className="App-header">
+        <>
           <Link to='/' className='home-link'>Gifly</Link>
           <Searcher></Searcher>
           <h2>Last search</h2>
@@ -24,8 +24,8 @@ function Home() {
           <Gifs gifs={gifs} loading={loading}></Gifs>
           </div>
           <TrendingGifs></TrendingGifs>
-        </div>
-      </div>
+        </>
+      </>
     )
   }
 

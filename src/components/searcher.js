@@ -16,8 +16,8 @@ const Searcher = ()=>{
     return(
           <form onSubmit={handleSubmit} className={"searcher-box"}>
             <input type="text" onChange={handleChange} className={"searcher"} placeholder={"Search here your gif..."}/>
-            <button>
-            <span className="material-symbols-outlined">search</span>
+            <button className='searchIcon'>
+                <img src={require('../searchIcon.png')} alt="search"/>
             </button>
           </form>
     )
