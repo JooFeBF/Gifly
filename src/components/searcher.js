@@ -13,7 +13,7 @@ const Searcher = ()=>{
         setPath(`/search/${keyword}/${rating}`);
     }
     const handleKeywordChange = (e) =>{
-        setKeyword(e.target.value);
+        if(e.target.value) setKeyword(e.target.value);
     }
     const handleRatingChange = (e) =>{
         setRating(e.target.value);

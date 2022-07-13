@@ -12,7 +12,7 @@ const TrendingGifs = () => {
             <h1>Trending Gifs</h1>
             <ul className="trending-data__ul">
                 {
-                    gifList.map(gif => <li key={gif}><Link to={`/search/${gif}`} className="trending-data__ul-li-a">{gif}</Link></li>)
+                    gifList.map(gif => <li key={gif}><Link to={`/search/${gif}/g`} className="trending-data__ul-li-a">{gif}</Link></li>)
                 }
             </ul>
         </div>
