@@ -2,15 +2,15 @@ import Gifs from 'components/gifsSearched';
 import './App.css';
 import { Link } from 'wouter';
 import Searcher from 'components/searcher';
-import ReturnGif from 'hooks/returnGif';
+import ReturnGif from 'hooks/useGetGifs';
 import useNearScreen from 'hooks/useNearScreen';
 import { useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet';
 
 function AllGif(props) {
   const { params } = props;
-  const { keyword } = params;
-  const { gifs, loading, setPage } = ReturnGif(keyword);
+  const { keyword, rating } = params;
+  const { gifs, loading, setPage } = ReturnGif(keyword, rating);
   const Ref = useRef();
   const title = `Gifs of ${decodeURI(keyword)} | Gifly`;
   const { isNearScreen } = useNearScreen({

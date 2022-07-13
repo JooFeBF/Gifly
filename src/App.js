@@ -13,7 +13,7 @@ function App() {
       <div className="App">
         <div className="App-header">
           <Route path="/" component={Home} />
-          <Route path="/search/:keyword" component={AllGif} />
+          <Route path="/search/:keyword/:rating" component={AllGif} />
           <Route path="/gif/:id" component={gifDetail} />
           <Route path="/404" component={error404} />
         </div>

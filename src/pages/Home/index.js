@@ -4,7 +4,7 @@ import { Link } from "wouter";
 import Searcher from 'components/searcher';
 import Gifs from 'components/gifsSearched';
 import TrendingGifs from 'components/trendingGifs/trendingGifs';
-import ReturnGif from 'hooks/returnGif';
+import ReturnGif from 'hooks/useGetGifs';
 import { Helmet } from 'react-helmet';
 
 
