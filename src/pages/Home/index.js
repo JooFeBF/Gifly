@@ -9,7 +9,7 @@ import { Helmet } from 'react-helmet';
 
 
 function Home() {
-    const { gifs, loading} = ReturnGif(localStorage.getItem('lastSearch'));
+    const { gifs, loading } = ReturnGif(localStorage.getItem('lastSearch') || '');
     return(
       <>
         <Helmet>
@@ -18,9 +18,18 @@ function Home() {
         <>
           <Link to='/' className='home-link'>Gifly</Link>
           <Searcher></Searcher>
-          <h2>Last search</h2>
-          <p>{decodeURI(localStorage.getItem('lastSearch'))}</p>
+          { 
+            localStorage.getItem('lastSearch') ?
+            <>
+              <h2>Last search</h2>
+              <p>{decodeURI(localStorage.getItem('lastSearch'))}</p>
+            </>
+            : null
+          }
           <div className='grid-content'>
+            {
+
+            }
           <Gifs gifs={gifs} loading={loading}></Gifs>
           </div>
           <TrendingGifs></TrendingGifs>

@@ -11,17 +11,20 @@ function AllGif(props) {
   const { params } = props;
   const { keyword, rating } = params;
   const { gifs, loading, setPage } = ReturnGif(keyword, rating);
+
   const Ref = useRef();
   const title = `Gifs of ${decodeURI(keyword)} | Gifly`;
   const { isNearScreen } = useNearScreen({
     externalRef: loading ? null : Ref,
     once: false
   });
+
   useEffect(() => {
     if (isNearScreen) {
       setPage(prevPage => prevPage + 1);
     }
   }, [isNearScreen, setPage]);  
+  
   return(
     <>
       <Helmet>

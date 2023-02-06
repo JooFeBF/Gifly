@@ -10,7 +10,7 @@ const Searcher = ()=>{
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setPath(`/search/${keyword}/${rating}`);
+        if(keyword) setPath(`/search/${keyword}/${rating}`)   
     }
     const handleKeywordChange = (e) =>{
         if(e.target.value) setKeyword(e.target.value);

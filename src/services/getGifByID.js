@@ -5,8 +5,8 @@ const getGifByID  = ({id})=>{
 
      return fetch(appUrl)
             .then(res => res.json())
-            .then(respons =>{
-                const { data } = respons
+            .then(response =>{
+                const { data } = response
                 const {title, images} = data
                 const {url} = images.original
                 return {url, title}

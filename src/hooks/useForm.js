@@ -2,7 +2,7 @@ import { useReducer } from "react"
 
 const useForm = () =>{  
     const initialState = {
-        keyword: "react",
+        keyword: "",
         rating: "g"
     }
     const ACTIONS = {

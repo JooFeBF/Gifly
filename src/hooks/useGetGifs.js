@@ -7,7 +7,7 @@ const ReturnGif = (keyword, rating)=>{
     const { gifs, setGifs } = useContext(Context)
     const [page, setPage] = useState(initialPage);
     const [loading, setLoading] = useState(false);
-    const keywordToUse = keyword || localStorage.getItem('lastSearch') || null;
+    const keywordToUse = keyword || localStorage.getItem('lastSearch') || '';
     useEffect(() => {
       setLoading(true);
       getGif(keywordToUse, initialPage, rating)
