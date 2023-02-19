@@ -3,30 +3,40 @@ import getGif from "services/getGif";
 import Context  from "context/gifContext";
 
 const initialPage = 0;
-const ReturnGif = (keyword, rating)=>{
+const ReturnGif = (keyword, rating, language)=>{
     const { gifs, setGifs } = useContext(Context)
     const [page, setPage] = useState(initialPage);
     const [loading, setLoading] = useState(false);
+    const [loadingNextPage, setLoadingNextPage] = useState(false);
+
     const keywordToUse = keyword || localStorage.getItem('lastSearch') || '';
+    const ratingToUse = rating || localStorage.getItem('lastRating') || 'g';
+    const languageToUse = language || localStorage.getItem('lastLanguage') || 'en';
+    
     useEffect(() => {
       setLoading(true);
-      getGif(keywordToUse, initialPage, rating)
+      getGif(keywordToUse, initialPage, ratingToUse, languageToUse)
         .then(gifs => {
           setGifs(gifs)
           setLoading(false)
           localStorage.setItem('lastSearch', keywordToUse)
+          localStorage.setItem('lastRating', ratingToUse)
+          localStorage.setItem('lastLanguage', languageToUse)
         });
-    }, [keyword, setGifs, keywordToUse, rating]);
+    }, [keyword, setGifs, keywordToUse, rating, language, ratingToUse, languageToUse]);
 
     useEffect(() => {
       if (page === initialPage) return
-      getGif(keywordToUse, page)
+
+      setLoadingNextPage(true);
+
+      getGif(keywordToUse, page, ratingToUse, languageToUse)
       .then(gifs => {
         setGifs(prevGifs => prevGifs.concat(gifs))
-        setLoading(false)
+        setLoadingNextPage(false)
       });
-    }, [page, keyword, setGifs, keywordToUse]);
-    return({gifs, loading, setPage});
+    }, [page, keyword, setGifs, keywordToUse, rating, ratingToUse, language, languageToUse]);
+    return({gifs, loading, setPage, loadingNextPage});
 }
 
 export default ReturnGif;

@@ -7,7 +7,6 @@ import TrendingGifs from 'components/trendingGifs/trendingGifs';
 import ReturnGif from 'hooks/useGetGifs';
 import { Helmet } from 'react-helmet';
 
-
 function Home() {
     const { gifs, loading } = ReturnGif(localStorage.getItem('lastSearch') || '');
     return(
@@ -26,12 +25,9 @@ function Home() {
             </>
             : null
           }
-          <div className='grid-content'>
-            {
-
-            }
-          <Gifs gifs={gifs} loading={loading}></Gifs>
-          </div>
+          <div className='grid-content' style={{'minHeight': `${loading ? '100vh' : '0'}`}}>
+            <Gifs gifs={gifs} />
+          </div>    
           <TrendingGifs></TrendingGifs>
         </>
       </>

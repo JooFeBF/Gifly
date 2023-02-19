@@ -1,0 +1,17 @@
+.spinner {
+  width: 10rem;
+  height: 10rem;
+  background-color: transparent;
+  border: 0.5rem solid #ccc;
+  border-top-color: #333;
+  border-radius: 100%;
+  animation: spinner 1s infinite;
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

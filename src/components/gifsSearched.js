@@ -2,9 +2,8 @@
 import ListOfGifs from './Gif';
 
 
-function Gifs({gifs, loading}) {
+function Gifs({gifs}) {
 
-  if (loading) return <h1>Loading...</h1>
   return(
     <>
       {

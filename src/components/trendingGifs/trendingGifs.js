@@ -1,15 +1,15 @@
+import Spinner from "components/spinner/spinner";
 import useNearScreen from "hooks/useNearScreen";
 import React, { Suspense } from "react";
-import Loader from "components/ContentLoader/loadingContent";
 
+const TrendingGifs = React.lazy(() => import("./trendingGifList"))
 
     const LazyTrendingGifs = () => {
-        const TrendingGifs = React.lazy(() => import("./trendingGifList"));
-        const {isNearScreen, fromRef} = useNearScreen({distance: "10px", once: false});
+        const {isNearScreen, fromRef} = useNearScreen({distance: "0px"})
             return (
-                <div ref={fromRef}>
-                    <Suspense fallback={<Loader/>}>
-                        {(isNearScreen) ? <TrendingGifs /> : <Loader/>}
+                <div className="trending-data-container" ref={fromRef}>
+                    <Suspense fallback={<Spinner/>}>
+                        {(isNearScreen) ? <TrendingGifs /> : <Spinner/>}
                     </Suspense>
                 </div>
             )
