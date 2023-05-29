@@ -1,0 +1,74 @@
+.main h1 {
+  color: var(--tertiary-color);
+  text-align: center;
+  margin: 40px;
+  font-size: 4em;
+}
+.gifs-grid {
+  display: block;
+  columns: 4 250px;
+  list-style: none;
+  width: 100%;
+  gap: 10px;
+  padding: 0 var(--containers-padding);
+}
+.gifs-grid li {
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: #222;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.gifs-grid li img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  object-fit: contain;
+}
+.gifs-grid li:hover > div {
+  filter: opacity(1);
+  backdrop-filter: blur(10px);
+}
+.gifs-grid li div {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+  background-color: var(--tertiary-color-rgb);
+  filter: opacity(0);
+  backdrop-filter: blur(0px);
+  transition: filter .2s, backdrop-filter .2s ;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  flex-direction: column;
+  gap: .3em;
+}
+.gifs-grid li div a, .gifs-grid li div button {
+  text-decoration: none;
+  border: 2px solid var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--quaternary-color);
+  border-radius: 50px;
+  padding: 1em;
+  transition: filter .3s;
+}
+.gifs-grid li div button {
+  justify-self: flex-end;
+  cursor: pointer;
+}
+.gifs-grid li div a:hover,
+.gifs-grid li div button:hover
+{
+  filter: brightness(.9);
+}
+.gifs-grid li div a h3 {
+  text-align: center;
+  color: var(--quaternary-color);
+}

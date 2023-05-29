@@ -1,0 +1,24 @@
+:root {
+  --quaternary-color: #8a2be2; /* violet */
+  --tertiary-color: #be86ff; /* light violet */
+  --tertiary-color-rgb: #be86ff77; /* light violet */
+  --secondary-color: #f1e6ff; /* very light violet */
+  --primary-color: #f7f3ff; /* extremely light violet */
+  --spacing-small: 20px;
+  --spacing-medium: 20px;
+  --columns-count: 4;
+  --columns-width: 250px;
+  --containers-padding: 100px;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+@media screen and (max-width: 800px) {
+  :root {
+    --containers-padding: 40px
+  }
+}

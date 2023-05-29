@@ -1,0 +1,36 @@
+.Header nav a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.Header nav {
+  display: flex;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 10px;
+  background-color: var(--tertiary-color);
+  color: var(--primary-color);
+  padding: 15px var(--containers-padding);
+  justify-content: space-between;
+}
+.Header nav form {
+  display: flex;
+}
+.Header nav form input {
+  border-radius: 50px;
+  border: 2px solid var(--quaternary-color);
+  padding: 5px 10px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.Header nav form button {
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border: 2px solid var(--quaternary-color);
+  border-left: 0;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.Header nav form input:focus {
+  outline: none;
+}
