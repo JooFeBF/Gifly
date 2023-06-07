@@ -1,25 +1,7 @@
-import { useEffect, useState } from 'react'
-
-import gifsMock from '../mocks/gifsMock.json'
 import SearchCss from './Search.module.css'
 import Gif from '../components/Gif'
-import { NAVIGATION_EVENTS } from '../constants/constants'
 
-function useGifs () {
-  const [gifs, setGifs] = useState([])
-
-  useEffect(() => {
-    setGifs(gifsMock.data.map(gif => ({
-      title: gif.title,
-      image: gif.images.downsized.url,
-      height: gif.images.downsized.height,
-      width: gif.images.downsized.width,
-      id: gif.id
-    })))
-  }, [])
-
-  return { gifs, setGifs }
-}
+import useGifs from '../hooks/useGifs'
 
 export default function Search () {
   const { gifs, setGifs } = useGifs()
