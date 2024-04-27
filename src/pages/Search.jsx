@@ -3,8 +3,8 @@ import Gif from '../components/Gif'
 
 import useGifs from '../hooks/useGifs'
 
-export default function Search () {
-  const { gifs, setGifs } = useGifs()
+export default function Search ({ routeParams }) {
+  const { gifs } = useGifs({ search: routeParams.params.query })
 
   return (
     <main className={SearchCss.main}>

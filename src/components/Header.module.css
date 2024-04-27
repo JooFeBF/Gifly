@@ -23,7 +23,7 @@
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-.Header nav form button {
+.Header nav form a {
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
   border: 2px solid var(--quaternary-color);
@@ -33,4 +33,9 @@
 }
 .Header nav form input:focus {
   outline: none;
+}
+.home-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  cursor: pointer;
 }
