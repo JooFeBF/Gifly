@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   jf-router:
-    specifier: ^0.0.5
-    version: 0.0.5(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^0.0.6
+    version: 0.0.6(react-dom@18.2.0)(react@18.2.0)
   react:
     specifier: 18.2.0
     version: 18.2.0
@@ -2181,8 +2181,8 @@ packages:
       reflect.getprototypeof: 1.0.6
       set-function-name: 2.0.2
 
-  /jf-router@0.0.5(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-FsxZAgHz+zj/tr5bmIe3bn5ZqBuwobTYTtc2DZvdIsa7RICKHQl6ODwNPgnDk74vwqM8HeZ29ego3hphfKpOPQ==}
+  /jf-router@0.0.6(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-nvS8XCPd0uetrak2ldO6E4X1pOpTsaVaa2kVn8Q5SvctJyKmKnAB/IAG/pe6YYcUbGC0u1eHNsJBMgQSOlYrAw==}
     peerDependencies:
       react: 18.2.0
       react-dom: 18.2.0
