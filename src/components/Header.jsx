@@ -20,12 +20,12 @@ export default function Header () {
   return (
     <header className={HeaderCss.Header}>
       <nav>
-        <Link href='/' className={HeaderCss['home-link']}>Gifly</Link>
+        <Link to='/' className={HeaderCss['home-link']}>Gifly</Link>
         <form onSubmit={handleSubmit}>
           <input type='text' onChange={handleChange} placeholder='cats gifs, dogs gifs...' />
-          <a href={`/search/${search}`}>
+          <Link to={`/search/${search}`}>
             <img src={searchIcon} alt='search icon' />
-          </a>
+          </Link>
         </form>
       </nav>
     </header>
