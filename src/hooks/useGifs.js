@@ -10,9 +10,9 @@ export default function useGifs ({ search }) {
     gifsFetch.then(gifsFetch => {
       setGifs(gifsFetch.data.map(gif => ({
         title: gif.title,
-        image: gif.images.original.url,
-        height: gif.images.original.height,
-        width: gif.images.original.width,
+        image: gif.images.fixed_height_downsampled.url,
+        height: gif.images.fixed_height_downsampled.height,
+        width: gif.images.fixed_height_downsampled.width,
         id: gif.id
       })))
     }).catch(err => console.error(err))
